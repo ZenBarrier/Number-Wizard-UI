@@ -11,7 +11,7 @@ public class NumberWizard : MonoBehaviour {
 
     int guess;
 
-    int maxGuessesAllowed = 10;
+    public int maxGuessesAllowed = 5;
 
     // Use this for initialization
     void Start () {
@@ -20,9 +20,7 @@ public class NumberWizard : MonoBehaviour {
 
     void StartGame()
     {
-        min = 1;
-        max = 1000;
-        guess = 500;
+        guess = max/2;
 
         text.text = "Choose a number between "+min+" and "+max+"\n\n"+
                     "Is your number higher or lower than "+guess+"?";
