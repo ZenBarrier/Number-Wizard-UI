@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class LevelManager : MonoBehaviour {
@@ -6,6 +7,8 @@ public class LevelManager : MonoBehaviour {
 	public void LoadLevel(string name)
     {
         Debug.Log("Level loaded for: "+name);
+        //Application.LoadLevel(name); //Depricated
+        SceneManager.LoadScene(name);
     }
 
     public void QuitRequest()
