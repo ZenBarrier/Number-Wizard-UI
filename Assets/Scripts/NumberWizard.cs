@@ -5,13 +5,14 @@ using System.Collections;
 
 public class NumberWizard : MonoBehaviour {
 
-    public int max;
-    public int min;
+    int min= 1 ;
+    int max = 1000;
+    public int maxGuessesAllowed = 5;
+
     public Text text;
 
     int guess;
 
-    public int maxGuessesAllowed = 5;
 
     // Use this for initialization
     void Start () {
@@ -20,10 +21,9 @@ public class NumberWizard : MonoBehaviour {
 
     void StartGame()
     {
-        guess = max/2;
+        guess = Random.Range(min, max);
 
-        text.text = "Choose a number between "+min+" and "+max+"\n\n"+
-                    "Is your number higher or lower than "+guess+"?";
+        text.text = "Is your number higher or lower than "+guess+"?";
 
         max++;
     }
@@ -46,7 +46,8 @@ public class NumberWizard : MonoBehaviour {
 
     void NextGuess()
     {
-        guess = (max + min) / 2;
+        //guess = (max + min) / 2;
+        guess = Random.Range(min+1,max-1);
         text.text = "Is the number lower or higher than " + guess + "?";
         maxGuessesAllowed--;
         if (maxGuessesAllowed <= 0)
