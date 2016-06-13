@@ -14,5 +14,6 @@ public class LevelManager : MonoBehaviour {
     public void QuitRequest()
     {
         Debug.Log("Quit requested!");
+        Application.Quit(); //only works in PC build. Bad for mobiles
     }
 }
